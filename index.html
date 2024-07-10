@@ -3,9 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Random Project</title>
 </head>
+
 <body>
-    
+    <div class="container">
+        <div class="idea-container animate__animated animate__fadeIn">
+            <h1>Random Project Idea Generator</h1>
+            <i class="app-title">👌</i>
+            <p id="projectText">Loading project idea...</p>
+            <button id="newProjectBtn"><i class="random-icon">🔃</i> New Idea</button>
+            <button id="copyIdeaBtn" onclick="copyFn()"><i class="copy-icon">📋</i> Copy Idea</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
 </body>
 </html>
