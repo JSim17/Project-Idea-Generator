@@ -63,6 +63,11 @@ button:hover {
     background: #FF6565;
 }
 
+.hidden-textarea {
+    position: absolute;
+    left: -9999px;
+}
+
 @media screen and (max-width: 600px) {
     .idea-container{
         width: 90%;

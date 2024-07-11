@@ -7,7 +7,6 @@ var ideas = [
 const idea = document.getElementById('projectText');
 const ideaBtn = document.getElementById('newProjectBtn');
 const copyBtn = document.getElementById('copyIdeaBtn');
-let textArea = document.createElement('textarea');
 
 ideaBtn.addEventListener('click', projectFn);
 copyBtn.addEventListener('click', copyFn);
@@ -19,15 +18,39 @@ function projectFn() {
 }
 
 function copyFn() {
-    // idea.select();
-    // idea.setSelectRange(0, 99999);
-    // navigator.clipboard.writeText(idea.value);
-    // alert("Copied the idea: " + idea.value);
+    // Get the element with the id 'idea'
+    const ideaElement = document.getElementById('projectText');
+    
+    // Check if the element exists
+    if (ideaElement) {
+        // Create a new textarea element
+        const textArea = document.createElement('textarea');
+        
+        // Set the text content you want to copy
+        textArea.value = ideaElement.textContent;
+        
+        // Add the class to hide the textarea
+        textArea.classList.add('hidden-textarea');
+        
+        // Append the textarea to the body (necessary for selection)
+        document.body.appendChild(textArea);
+        
+        // Select the text
+        textArea.select();
 
-    // var textArea = document.createElement('textarea');
-    textArea = idea.textContent;
-    textArea.select();
-    navigator.clipboard.writeText(textArea.value);
-    document.body.removeChild(textArea);
-    alert('Idea copied to clipboard!');
+        // Copy the selected text to the clipboard
+        navigator.clipboard.writeText(textArea.value)
+            .then(() => {
+                // Remove the textarea element from the body
+                document.body.removeChild(textArea);
+
+                // Alert the user
+                alert('Idea copied to clipboard!');
+            })
+            .catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+    } else {
+        console.error('Element with id "idea" not found.');
+    }
 }
