@@ -23,11 +23,12 @@ body{
     padding: 20px;
     background: #fff;
     border-radius: 10px;
-    width: 60%;
-    height: 60%;
+    width: 700px;
+    height: 50%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     margin: 20px;
     overflow: hidden;
+    align-items: center;
 }
 
 .laugh-icon,
@@ -39,9 +40,11 @@ body{
 }
 
 #projectText {
+    display: block;
     font-size: 18px;
     color: #555;
     margin: 20px 10px;
+    min-height: 110px;
 }
 
 button {
